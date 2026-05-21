@@ -1,0 +1,230 @@
+body{
+    background: linear-gradient(to bottom, #000000, #1a1a1a);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: "Orbitron", sans-serif;
+    cursor: crosshair;
+    margin: 0;
+}
+
+h1{
+    font-size: 70px;
+    margin-bottom: 10px;
+    letter-spacing: 8px;
+    text-shadow: 0 0 10px red;
+    animation: piscar 2s infinite alternate;
+}
+
+@keyframes piscar{
+    0%{
+        text-shadow: 0 0 5px red;
+    }
+    100%{
+        text-shadow: 0 0 20px red;
+    }
+}
+
+.container{
+    text-align: center;
+    max-width: 700px;
+    width: 90%;
+    margin: auto;
+}
+
+a{
+    display: block;
+    width: fit-content;
+    margin: 15px auto;
+    text-decoration: none;
+    color: white;
+    border: 1px solid red;
+    padding: 10px 25px;
+    transition: 0.3s;
+}
+
+a:hover{
+    background-color: red;
+}
+
+p{
+    margin-bottom: 40px;
+    color: #b3b3b3;
+    font-size: 14px;
+}
+
+.aviso{
+    margin-top: 40px;
+    font-size: 10px;
+    color:red;
+    opacity: 0.5;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 0;
+    margin-left: auto;
+    margin-right: auto;
+    animation: digitando 4s steps(30) infinite;  
+}
+
+@keyframes digitando{
+    from{
+        width: 0;
+    }
+    to{
+        width: 320px;
+    }
+}
+
+#perigo{
+    animation: tremer 0.1s infinite;
+}
+
+@keyframes tremer{
+    0%{
+        transform: translateX(0);
+    }
+    25%{
+        transform: translateX(-2px);
+    }
+    50%{
+        transform: translateX(2px);
+    }
+    100%{
+        transform: translateX(0);
+    }
+}
+
+.aviso-final{
+    margin-top: 50px;
+    font-size: 12px;
+    color: #888;
+    letter-spacing: 3px;
+}
+
+.loop{
+    background: linear-gradient(to bottom, #000000, #0d1b2a);
+}
+
+.desconectar{
+    background: linear-gradient(to bottom, #000000, #0f2a1d);
+}
+
+.empresa{
+    background: linear-gradient(to bottom, #000000, #1a0000);
+}
+
+.secreto-body{
+    background: black;
+    font-family: monospace;
+    font-size: 8px;
+    color: red;
+}
+
+.secreto{
+    all: unset;
+    color: #444;
+    cursor: text;
+}
+
+.codigo{
+    position: absolute;
+    font-size: 10px;
+    opacity: 0.15;
+    color: red;
+}
+
+input{
+    background: transparent;
+    border: 1px solid red;
+    color: white;
+    padding: 10px;
+    margin-top: 20px;
+    font-family: "Orbitron", sans-serif;
+}
+
+button{
+    background: transparent;
+    border: 1px solid red;
+    color: white;
+    padding: 10px 20px;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover{
+    background: red;
+}
+
+#error{
+    color: red;
+    margin-top: 20px;
+}
+
+.mensagem-inicial{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    animation: desaparecer 4s forwards;
+}
+
+@keyframes desaparecer{
+    0%{
+        opacity: 1;
+    }
+    70%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+
+.video-fullscreen{
+    position: fixed;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: black;
+    opacity: 0;
+    animation: aparecerVideo 3s forwards;
+    animation-delay: 4s;
+    flex-direction: column;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+@keyframes aparecerVideo{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+
+}
+
+.video-fullscreen video{
+    width: 85vw;
+    max-height: 85vh;
+    object-fit: contain;
+    border: 2px solid red;
+    box-shadow: 0 0 25px red;
+    background: black;
+}
+
+.monitoramento-body{
+    overflow: hidden;
+}
+
+@media(max-width: 600px){
+    h1{
+        font-size: 40px;
+        letter-spacing: 4px;
+    }
+}
